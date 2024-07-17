@@ -10,6 +10,6 @@ call "%CONDA_PATH%" activate <Env>
 python "sysmlGPTUI.py"
 
 :: Deactivate the environment
-: : call "%CONDA_PATH%" deactivate
+call "%CONDA_PATH%" deactivate
 
 pause
