@@ -10,6 +10,7 @@ Fill <OpenAI Key> with your key.
 
 # sysmlGPTUI.py
 PyQt5 class to interface with user, sysmlGPT object, and JupyterSandbox CLI.
+
 ![Screenshot (200)](https://github.com/user-attachments/assets/dd7e2dac-3d7b-44e8-8735-b16c9b5c1372)
 
 # JupyterSandbox.py
