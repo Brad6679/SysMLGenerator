@@ -27,7 +27,7 @@ Fill 'Env' with your user.
 Code is currently relatively buggy, but works for one off text/image prompts fed to UI (may run multiple times for one prompt, working on debugging).
 
 
-Pip Dependencies:
+# Pip Dependencies
 PyQt5
 openai
 jupyter_client
