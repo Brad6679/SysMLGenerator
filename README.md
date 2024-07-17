@@ -18,7 +18,7 @@ Jupyter CLI wrapper written by Michael Shi to run sysml kernel and get error dum
 
 # startCode.bat
 Batch file to run software on windows, calls anaconda environment then sysmlGPTUI to output code/errors to terminal and save diagram image to working directory with given name from GPT.
-Fill <User> with your user.
+Fill 'User' with your user.
 
 # startCode.sh
 Bash file to run software on linux, calls anaconda environment then sysmlGPTUI to output code/errors to terminal and save diagram image to working directory with given name from GPT.
