@@ -14,7 +14,7 @@ PyQt5 class to interface with user, sysmlGPT object, and JupyterSandbox CLI.
 ![Screenshot (200)](https://github.com/user-attachments/assets/dd7e2dac-3d7b-44e8-8735-b16c9b5c1372)
 
 # JupyterSandbox.py
-Jupyter CLI wrapper written by Michael Shi to run sysml kernel and get error dump/visualization of sysml diagram.![92bc146b](https://github.com/user-
+Jupyter CLI wrapper written by Michael Shi to run sysml kernel and get error dump/visualization of sysml diagram.
 
 # startCode.bat
 Batch file to run software on windows, calls anaconda environment then sysmlGPTUI to output code/errors to terminal and save diagram image to working directory with given name from GPT.
