@@ -1,5 +1,5 @@
 # SysMLGenerator
-Windows software to use GPT to generate SysMLv2 code using fine tuned assistant.
+Windows/Linux software to use GPT to generate SysMLv2 code using fine tuned assistant.
 
 
 # sysmlGPT.py
