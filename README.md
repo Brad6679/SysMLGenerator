@@ -7,6 +7,7 @@ OpenAI wrapper to query assistant for a SysMLv2 diagram using textual or image i
 Current version does not support other arguments to constructor.
 Handles both GPT code output, and text output parsing to isolate code snippet using regex.
 Fill <OpenAI Key> with your key.
+Replace asst_id with you assistant's ID.
 
 # sysmlGPTUI.py
 PyQt5 class to interface with user, sysmlGPT object, and JupyterSandbox CLI.
