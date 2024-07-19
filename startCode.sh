@@ -1,2 +1,2 @@
-conda activate <YourEnv>
+conda activate NSIenv
 python sysmlGPTUI.py
