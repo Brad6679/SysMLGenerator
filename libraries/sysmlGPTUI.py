@@ -94,7 +94,7 @@ class MainWindow(QWidget):
 
             #print(svg_content)
 
-                cairosvg.svg2png(bytestring=svg_content.encode('utf-8'), write_to='../output/output.png')
+                cairosvg.svg2png(bytestring=svg_content.encode('utf-8'), write_to='output/output.png')
 
         
 
