@@ -38,3 +38,4 @@ glob
 os
 time
 re
+nbformat
