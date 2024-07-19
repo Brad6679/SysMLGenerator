@@ -14,8 +14,9 @@ import os
 from openai import OpenAI
 import time
 from sysmlGPT import sysmlGPT
-from JupyterSandbox import JupyterSandbox
-
+#from JupyterSandbox import JupyterSandbox
+from jupyterBook import JupyterBook
+import cairosvg
 
 #from PyQt6.QtWidgets import QApplication, QLineEdit, QVBoxLayout, QWidget
 
@@ -71,21 +72,35 @@ class MainWindow(QWidget):
       self.runCode(code)
 
     def runCode(self, code):
-        sandbox = JupyterSandbox(kernel_name='sysml')
-        sandbox.start_kernel()
-        pind = code.find("packae")
+        book = JupyterBook()
+        #sandbox = JupyterSandbox(kernel_name='sysml')
+        #sandbox.start_kernel()
+        pind = code.find("package")
         bind = code.find("{", pind)
         name = code[pind + len("package"):bind].strip()
         viz = f'%viz --view=tree {name}'
-        errors = sandbox.execute_both(code, viz)
+        
+        #errors = sandbox.execute_both(code, viz)
         #errors = sandbox.execute_code(code)
         #sandbox.save_image(name=f'{name}.png')
-        sandbox.stop_kernel
-        print(errors)
+        errors = book.runCode(code, viz)
+        
+        #sandbox.stop_kernel
+        print(errors[0]['outputs'][0]['name'] + " " + errors[0]['outputs'][0]['text'])
+        if len(errors) > 1:
+            keys = errors[1]['outputs'][0]['data'].keys()
+            if 'image/svg+xml' in keys:
+                svg_content = errors[1]['outputs'][0]['data']['image/svg+xml']
+
+            #print(svg_content)
+
+                cairosvg.svg2png(bytestring=svg_content.encode('utf-8'), write_to='output.png')
+
+        
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
-    #app.exec_()
     sys.exit(app.exec_())
