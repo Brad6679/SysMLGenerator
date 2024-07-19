@@ -1,2 +1,2 @@
 conda activate NSIenv
-python sysmlGPTUI.py
+python libraries/sysmlGPTUI.py
