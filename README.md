@@ -22,7 +22,7 @@ Fill 'User' with your user and 'Env' with conda environment.
 
 # startCode.sh
 Bash file to run software on linux, calls anaconda environment then sysmlGPTUI to output code/errors to terminal and save diagram image to working directory with given name from GPT.
-Fill 'Env' with your user.
+Fill 'Env' with your environment name.
 
 Code is currently relatively buggy, but works for one off text/image prompts fed to UI (may run multiple times for one prompt, working on debugging).
 
