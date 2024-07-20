@@ -31,14 +31,8 @@ Code is currently relatively buggy, but works for one off text/image prompts fed
 Anaconda environment config file to install environment.
 
 # Dependencies
+Python 3.10
 PyQt5
 openai
-jupyter_client
 cairosvg
-base64
-requests
-glob
-os
-time
-re
 nbformat
