@@ -27,8 +27,10 @@ Fill 'Env' with your environment name.
 
 Code is currently relatively buggy, but works for one off text/image prompts fed to UI (may run multiple times for one prompt, working on debugging).
 
+# sysmlgen.yaml
+Anaconda environment config file to install environment.
 
-# Pip Dependencies
+# Dependencies
 PyQt5
 openai
 jupyter_client
