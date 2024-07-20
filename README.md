@@ -31,8 +31,8 @@ Code is currently relatively buggy, but works for one off text/image prompts fed
 Anaconda environment config file to install environment.
 
 # Dependencies
-Python 3.10
-PyQt5
-openai
-cairosvg
-nbformat
+- Python 3.10
+- PyQt5
+- openai
+- cairosvg
+- nbformat
