@@ -1,0 +1,9 @@
+# install: conda env create -f sysmlgen.yaml 
+# update:  conda env update -f sysmlgen.yaml 
+name: sysmlgen
+dependencies:
+  - pip:
+    - openai
+    - nbformat
+    - caurisvg
+    - PyQt5
