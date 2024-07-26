@@ -16,9 +16,9 @@ class sysmlGPT():
   def __init__(self, asst):
       
       if asst == "Default":
-        self.asstid = "asst_JaH0siFJiK3oXZUKD1G3WZCy"
+        self.asstid = "<Asst_ID_1>"
       elif asst == "Image":
-        self.asstid = "asst_rkxmYDfYwpz7DH6x5MIFL2ID"
+        self.asstid = "<Asst_ID_2>"
       else:
         self.asstid = None # Smart city assistant unimplemented
       key = "<OpenAI Key>"
@@ -122,7 +122,20 @@ class sysmlGPT():
         # match[0] is the language (e.g., 'py')
         # match[1] is the code
         code_blocks = match[1]
+
+    # No languge shown after backticks
+    if len(code_blocks) == 0:
+      code_block_pattern = re.compile(r'```\n(.*?)```', re.DOTALL)
     
+      # Find all code blocks in the text
+      matches = code_block_pattern.findall(text)
+      
+      code_blocks = []
+      for match in matches:
+          # match[0] is the language (e.g., 'py')
+          # match[1] is the code
+          code_blocks = match[0]
+      
     return code_blocks
 
 
