@@ -3,12 +3,30 @@ import nbformat
 import os
 import cairosvg
 
-
+"""
+Class to run, edit, and retrieve output of SysMLv2 code in Jupyter Notebook
+"""
 class JupyterBook:
+    """ 
+      Initializes Jupyter Notebook
+    """
     def __init__(self):
         # Create a new notebook
         self.nb = nbformat.v4.new_notebook()
 
+
+    """ 
+      Runs and retrieves output of code
+
+      code : str
+        SysMLv2 code to run
+
+       viz : str
+           Visualization command to run
+
+        Returns : dict
+            Dictionary of output cells (errors or image/return code)
+    """
     def runCode(self, code, viz):
         self.nb.cells.append(nbformat.v4.new_code_cell(code))
         self.nb.cells.append(nbformat.v4.new_code_cell(viz))
@@ -27,10 +45,6 @@ class JupyterBook:
 
         # Collect errors
         return self.nb.cells
-        #return self.nb.cells[0]['outputs'][0]['name'] + " " +  self.nb.cells[0]['outputs'][0]['text']
-        #for cell in nb.cells:
-         #   print(cell['outputs'])
-                
     
 
 
