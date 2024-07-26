@@ -83,9 +83,11 @@ class MainWindow(QWidget):
           SysMLv2 code to run
     """
     def runCode(self, code):
-    
         book = JupyterBook()
-
+        #print(code)
+        if len(code) == 0:
+            print("Unable to parse GPT output. Try again")
+            return
         pind = code.find("package")
         bind = code.find("{", pind)
         name = code[pind + len("package"):bind].strip()
