@@ -7,36 +7,34 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtCore import QTimer
 import json
-import base64
-import requests
-import glob
 import os
 from openai import OpenAI
 import time
 from sysmlGPT import sysmlGPT
-#from JupyterSandbox import JupyterSandbox
 from jupyterBook import JupyterBook
 import cairosvg
 
-#from PyQt6.QtWidgets import QApplication, QLineEdit, QVBoxLayout, QWidget
-
+"""
+Frontend UI Class
+"""
 class MainWindow(QWidget):
+    """ 
+      Initializes MainWindow Object to enable user interaction with backend
+    """
     def __init__(self, parent=None):
+                
         super().__init__(parent)
         self.setWindowTitle("GPT UI")
         self.resize(300, 100)
-        # Line edit with a parent widget
         self.sys = sysmlGPT('Default')
 
                 
         self.txt = QLineEdit(self)
-        #self.txt.setValidator(QIntValidator())
-        #self.txt.setMaxLength(4)
         self.txt.setAlignment(Qt.AlignLeft)
         self.txt.setFont(QFont("Arial",12))
         self.txt.move(50, 75)
         self.txt.editingFinished.connect(self.enterPress)
-        # Line edit with a parent widget and a default text
+
         layout = QVBoxLayout()
         layout.addWidget(self.txt)
 
@@ -50,9 +48,13 @@ class MainWindow(QWidget):
 
 
         self.setLayout(layout)
-
+    """ 
+      Function mapped to text box, runs when user presses enter on their query.
+      Sends text request to GPT.
+    """
     def enterPress(self):
         # send gpt prompt by text
+        self.sys = sysmlGPT('Default')
         out = self.sys.run(self.txt.text(), None)
         print(out)
         code = self.sys.extract_code_blocks(out)
@@ -60,32 +62,38 @@ class MainWindow(QWidget):
         
         #print(text)
 
+    """ 
+      Function mapped to file input button, runs when user selects an image as a query.
+      Sends image request to GPT.
+    """
     def getfile(self):
-      #self.img = True
+
       self.imgFname = QFileDialog.getOpenFileName(self, 'Open file', 
          'c:\\',"Image files (*.jpg *.gif)")
-      #self.img = fname
-      #print(self.imgFname[0])
+      self.sys = sysmlGPT('Image')
       out = self.sys.run(None, self.imgFname[0])
       code = self.sys.extract_code_blocks(out)
       print(out)
       self.runCode(code)
+      
+    """ 
+      Interfaces with JupyterBook to run code and retrieve output.
 
+      code : str
+          SysMLv2 code to run
+    """
     def runCode(self, code):
+    
         book = JupyterBook()
-        #sandbox = JupyterSandbox(kernel_name='sysml')
-        #sandbox.start_kernel()
+
         pind = code.find("package")
         bind = code.find("{", pind)
         name = code[pind + len("package"):bind].strip()
         viz = f'%viz --view=tree {name}'
-        
-        #errors = sandbox.execute_both(code, viz)
-        #errors = sandbox.execute_code(code)
-        #sandbox.save_image(name=f'{name}.png')
+
         errors = book.runCode(code, viz)
         
-        #sandbox.stop_kernel
+        
         print(errors[0]['outputs'][0]['name'] + " " + errors[0]['outputs'][0]['text'])
         if len(errors) > 1:
             keys = errors[1]['outputs'][0]['data'].keys()
