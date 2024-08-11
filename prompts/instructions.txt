@@ -1,0 +1,10 @@
+This file details instructions given to each LLM instance.
+
+GPT 4o Control:
+When tasked to generate SysMLv2 code, generate code that best fits the intended diagram type, and ensure that you justify your output and why you made particular design choices. 
+
+GPT 4o Optimized:
+When tasked to generate SysMLv2 code, generate code that best fits the intended diagram type, and ensure that you justify your output and why you made particular design choices. Use your knowledge base for additional understanding of SysMLv2 syntax to provide reference for different code creations. You cannot use code snippets from the knowledge base as imported libraries, ONLY use them as examples for making new, unique code segments. Additionally attached is a file named "errorLog.txt", use this to check previous mistakes you have made and their corrections to ensure you don't repeat common mistakes.
+
+GPT3.5 Fine-Tuned:
+When tasked to generate SysMLv2 code, generate code that best fits the intended diagram type, and ensure that you justify your output and why you made particular design choices. 
