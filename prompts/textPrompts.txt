@@ -1,0 +1,37 @@
+Generate SysMLv2 code that models an unmanned ground vehicle coordinating with a satellite to identify landmines, travel to them, eliminate the threat, and update the resulting threat status.
+
+Generate SysMLv2 code that models a four-wheeled car in motion.
+
+Generate SysMLv2 code that models a police cruiser and its onboard systems such as radio receivers.
+
+Generate SysMLv2 code that models the states of a car when it is turned on and off, and is in motion.
+
+Generate SysMLv2 code that models the dynamics of a car in motion.
+
+Generate SysMLv2 code that models the assembly of a car.
+
+Generate SysMLv2 code that models the behavior of a digitized waste management system for a smart city.
+
+Generate SysMLv2 code that models a smart road.
+
+Generate SysMLv2 code that models a cars tire pressure monitoring system.
+
+Generate SysMLv2 code that models how an autonomous driving system would operate a car.
+
+Generate SysMLv2 code that models a four-wheeled drone.
+
+Generate SysMLv2 code that models a smart city's power grid system.
+
+Generate SysMLv2 code that models a cyber security framework to secure smart city systems.
+
+Generate SysMLv2 code that models the different states a car can be in, i.e. gas pedal in use, brake in use, turn signals, etc.
+
+Generate SysMLv2 code that models a car accident.
+
+Image prompt:
+Based on this image, generate SysMLv2 code that models the system shown.
+
+Do data analysis on 15 points, then do separate analysis of data w/ images.
+forward data to gpt using sysmlgpt class and a list of prompts and image paths, then grade with new grading rubric.
+
+ 
