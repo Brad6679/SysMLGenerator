@@ -30,6 +30,9 @@ Code is currently relatively buggy, but works for one off text/image prompts fed
 # sysmlgen.yaml
 Anaconda environment config file to install environment.
 
+# sysmlQuery
+Software used to query GPT and save results applying scoring metrics for research.
+
 # Dependencies
 - Python 3.10
 - PyQt5
