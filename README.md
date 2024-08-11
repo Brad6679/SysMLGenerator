@@ -30,7 +30,7 @@ Code is currently relatively buggy, but works for one off text/image prompts fed
 # sysmlgen.yaml
 Anaconda environment config file to install environment.
 
-# sysmlQuery
+# sysmlQuery.py
 Software used to query GPT and save results applying scoring metrics for research. Image/text prompts provided in prompts/, chain of thought was applied by giving instructions to GPT assistant in the GPT builder by requiring it to justify its design choices.
 # Dependencies
 - Python 3.10
