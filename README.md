@@ -31,10 +31,12 @@ Code is currently relatively buggy, but works for one off text/image prompts fed
 Anaconda environment config file to install environment.
 
 # sysmlQuery.py
-Software used to query GPT and save results applying scoring metrics for research. Image/text prompts provided in prompts/, chain of thought was applied by giving instructions to GPT assistant in the GPT builder by requiring it to justify its design choices.
+Software used to query GPT iteratively and save results applying syntaxial scoring metrics for research. Image/text prompts provided in prompts/, chain of thought was applied by giving instructions to GPT assistant in the GPT builder by requiring it to justify its design choices. 
+
 # Dependencies
 - Python 3.10
 - PyQt5
 - openai
 - cairosvg
 - nbformat
+- cv2
