@@ -13,6 +13,7 @@ import time
 from sysmlGPT import sysmlGPT
 from jupyterBook import JupyterBook
 import cairosvg
+import cv2
 
 """
 Frontend UI Class
@@ -94,9 +95,9 @@ class MainWindow(QWidget):
         viz = f'%viz --view=tree {name}'
 
         errors = book.runCode(code, viz)
-        
-        
-        print(errors[0]['outputs'][0]['name'] + " " + errors[0]['outputs'][0]['text'])
+        if 'name' in errors[0]['outputs'][0].keys():
+            print(errors[0]['outputs'][0]['name'] + " " + errors[0]['outputs'][0]['text'])
+
         if len(errors) > 1:
             keys = errors[1]['outputs'][0]['data'].keys()
             if 'image/svg+xml' in keys:
@@ -105,6 +106,9 @@ class MainWindow(QWidget):
             #print(svg_content)
 
                 cairosvg.svg2png(bytestring=svg_content.encode('utf-8'), write_to='output/output.png')
+                cv2.imshow("GPT Diagram Output", cv2.imread('output/output.png'))
+                cv2.waitKey(0)
+                cv2.destroyAllWindows()
 
         
 
