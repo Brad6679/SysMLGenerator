@@ -75,7 +75,10 @@ class MainWindow(QWidget):
       out = self.sys.run(None, self.imgFname[0])
       code = self.sys.extract_code_blocks(out)
       print(out)
-      self.runCode(code)
+      if len(code) > 0:
+          self.runCode(code)
+      else:
+          print("ERROR: GPT did not output parseable code or did not output any code at all")
       
     """ 
       Interfaces with JupyterBook to run code and retrieve output.
