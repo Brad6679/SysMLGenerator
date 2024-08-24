@@ -5,6 +5,6 @@ dependencies:
   - pip:
     - openai
     - nbformat
-    - caurisvg
+    - cairosvg
     - PyQt5
     - opencv-python
