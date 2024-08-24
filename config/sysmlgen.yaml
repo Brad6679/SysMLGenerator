@@ -7,3 +7,4 @@ dependencies:
     - nbformat
     - caurisvg
     - PyQt5
+    - opencv-python
